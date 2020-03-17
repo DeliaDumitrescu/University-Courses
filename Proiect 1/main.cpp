@@ -30,7 +30,48 @@ vector <elem> a[101];    // in a[i] avem perechi de forma < stare adiacenta cu i
 queue <elem2> q;         // in q perechi de forma < stare, secventa_litere_formata_pana_in_starea_respectiva >
 unordered_set <string> printed;
 
-/// DFA & NFA
+
+///DFA
+
+int automata(char word[])
+{
+    int i, j, state, next_state, letter, index_in_word;
+    bool found, isfinal = 0;
+    state = q0;
+
+    for(index_in_word = 0; index_in_word < strlen(word); index_in_word ++)
+    {
+        found = 0;
+
+        for(i = 0; i < a[state].size() && found == 0; i ++)
+        {
+            next_state = a[state][i].st;
+            letter = a[state][i].c;
+
+            if(letter == word[index_in_word])
+            {
+                found = 1;
+                state = next_state;
+            }
+
+        }
+
+        if(found == 0)
+        return 0;
+
+         if(index_in_word == strlen(word) - 1)            //verificam daca ultima stare in care ajungem e stare finala
+            for(j = 0; j < t; j ++)
+                if(state == qf[j])
+                    isfinal = 1;
+    }
+    return isfinal;
+}
+
+
+
+
+
+/// NFA
 
 void dfs(char word[], int index_in_word, int state, bool &accepted)
 {
@@ -131,16 +172,29 @@ int main()
     for(i = 0; i < words_to_test; i++)
     {
         fin >> s;
-        accepted = 0;
 
+        ///DFA
+
+        /*if(automata(s) == 1)
+            fout << s << " -> " << "Cuvantul poate fi procesat de DFA." << '\n';
+        else
+            fout << s << " -> " << "Cuvantul nu poate fi procesat de DFA." << '\n';
+        */
+
+        ///NFA
+
+        accepted = 0;
         dfs(s, 0, q0, accepted);
 
         if(accepted == 1)
-            fout << s << "  " << "Cuvantul poate fi procesat." << '\n';
+            fout << s << " -> " << "Cuvantul poate fi procesat de NFA." << '\n';
         else
-            fout << s << "  " << "Cuvantul nu poate fi procesat." << '\n';
+            fout << s <<  " -> " << "Cuvantul nu poate fi procesat de NFA." << '\n';
+
 
     }
+
+    ///FIRST ... WORDS GENERATED
 
     fin >> to_generate;    //numar cuvinte de generat
 
