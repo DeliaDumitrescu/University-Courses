@@ -51,7 +51,7 @@ def RadixSort16(list):
 
     while ind < 8:
 
-        sublists = [ [] for i in range(257) ]
+        sublists = [ [] for i in range(17) ]
 
         for i in list:
             sublists[ (i//exp)  % 16] += [i]
@@ -67,5 +67,3 @@ def RadixSort16(list):
         exp = exp * 16
 
     return list
-
-print(RadixSort16([1, 6, 3, 7, 99, 101, 222]))
