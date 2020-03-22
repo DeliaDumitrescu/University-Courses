@@ -45,3 +45,27 @@ def RadixSort256(list):
 
     return list
 
+
+def RadixSort16(list):
+    ind, exp = 0, 1
+
+    while ind < 8:
+
+        sublists = [ [] for i in range(257) ]
+
+        for i in list:
+            sublists[ (i//exp)  % 16] += [i]
+
+        list = []
+
+        for i in sublists:
+            for j in i:
+                if j != []:
+                    list += [j]
+
+        ind += 1
+        exp = exp * 16
+
+    return list
+
+print(RadixSort16([1, 6, 3, 7, 99, 101, 222]))
