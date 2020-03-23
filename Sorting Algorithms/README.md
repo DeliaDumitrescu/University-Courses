@@ -9,5 +9,5 @@
     * Shell Sort
 - Measuring execution time, including the execution time for the *Implemented Sort* in Python
 - Testing on different inputs
-![alt text] (https://github.com/DeliaDumitrescu/Learning-Data-Structures/blob/master/Sorting%20Algorithms/input.png)
+![] (/DeliaDumitrescu/Learning-Data-Structures/blob/master/Sorting%20Algorithms/input.png)
 
