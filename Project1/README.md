@@ -11,7 +11,7 @@
 - S-a citit p=7,  ACAD si BCF si s-a afisat:
 
 Generatorul g este: 3 <br />
-Mesajul criptat este: BCBG
+Mesajul criptat este: BCBG <br />
 Mesajul decriptat este: ACF.
 
 - S-a citit p=22 si s-a afisat: 
@@ -20,6 +20,6 @@ p nu este prim.
 
 - S-a citit p=5, AAABC si DEDC si s-a afisat:
 
-Generatorul g este: 2
-Mesajul criptat este: BBBCE
+Generatorul g este: 2 <br />
+Mesajul criptat este: BBBCE <br /> 
 Mesajul decriptat este: DCDB.
