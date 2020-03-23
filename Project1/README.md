@@ -10,7 +10,7 @@
 
 - S-a citit p=7,  ACAD si BCF si s-a afisat:
 
-Generatorul g este: 3
+Generatorul g este: 3 <br />
 Mesajul criptat este: BCBG
 Mesajul decriptat este: ACF.
 
