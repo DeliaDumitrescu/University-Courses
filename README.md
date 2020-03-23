@@ -1,2 +1,4 @@
 # Learning-Data-Structures
-In this project, I implemented various sorting techniques. 
+- Implementing various sorting techniques
+- Measuring execution time
+- Testing on different inputs
