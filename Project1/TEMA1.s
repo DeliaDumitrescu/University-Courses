@@ -237,19 +237,3 @@ neprim:
 exit:
 li $v0,10
 syscall
-
-#Exemple date de intrare
-#1). S-a citit p=7,  ACAD si BCF si s-a afisat:
-#Generatorul g este: 3
-#Mesajul criptat este: BCBG
-#Mesajul decriptat este: ACF.
-#2). S-a citit p=22 si s-a afisat: p nu este prim.
-#3).S-a citit p=5, AAABC si DEDC si s-a afisat:
-#Generatorul g este: 2
-#Mesajul criptat este: BBBCE
-#Mesajul decriptat este: DCDB.
-
-#Descriere
-#1). Cautam toti posibilii generatori incepand cu 2, punand intr-un vector puterile fiecarui posibil generator. Apoi, cautam secvential in vector fiecare valoare pentru a fi siguri ca s-au obtinut toate numerele din grup. La final, in vector vor fi puterile generatorului gasit.
-#2). Pentru fiecare litera din mesajul clar, aflam indicele sau scazand codul lui ‘A’ (A va avea indicele 0, B va avea indicele 1 etc), il inmultim cu 4 pentru a-l putea cauta in vector si il trecem in izomorfismul corespunzator. Apoi, aflam litera corespunzatoare izomorfismului si o punem in vectorul de afisare.
-#3). Pentru fiecare litera din mesajul criptat, aflam indicele literei, iar apoi cautam morfismul invers si aflam litera corespunzatoare, pe care o punem in vectorul de afisare.
