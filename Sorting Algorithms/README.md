@@ -1,5 +1,5 @@
 
-# Learning-Data-Structures
+# Project 1 : Sorting Techniques
 
 - Implementing various **sorting techniques**:
 
