@@ -49,4 +49,4 @@ def too_big(method):
         g.write(method.__name__ + '\n'+ "Can't sort!" + '\n' + '\n')
 
 def print_data_set(how_many, limit):
-     g.write("Pentru " + str(how_many) + " numere " + "mai mici ca " + str(limit) + ":" + '\n' + '\n')
+     g.write("Pentru " + str(how_many) + " de numere " + "mai mici ca " + str(limit) + ":" + '\n' + '\n')
