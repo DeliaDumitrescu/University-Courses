@@ -17,3 +17,6 @@ number_of_elements_in_array   limit_of_numbers_in_array
 
 ![](input.png)
 
+## Output Format
+
+![](output.png)
