@@ -9,5 +9,6 @@
     * Shell Sort
 - Measuring execution time, including the execution time for the *Implemented Sort* in Python
 - Testing on different inputs
-![] (Sorting Algorithms/input.png)
+
+![](input.png)
 
