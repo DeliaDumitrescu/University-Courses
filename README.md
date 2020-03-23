@@ -6,5 +6,5 @@
     * Quick Sort
     * Bubble Sort
     * Shell Sort
-- Measuring execution time
+- Measuring execution time, including the execution time for the *Implemented Sort* in Python
 - Testing on different inputs
