@@ -13,7 +13,7 @@
 ## Input Format
 
 number_of_tests <br />
-number_of_elements_in_array <pre>      </pre>  limit_of_numbers_in_array
+number_of_elements_in_array &nbsp  limit_of_numbers_in_array
 
 ![](input.png)
 
