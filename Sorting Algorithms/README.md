@@ -19,6 +19,6 @@ number_of_elements_in_array   limit_of_numbers_in_array
 
 ## Output Format
 
--Output for the first set of input:
+- Output generated for the first set of input:
 
 ![](output.png)
