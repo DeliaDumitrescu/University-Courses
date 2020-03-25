@@ -121,19 +121,19 @@ void bfs(int to_generate)
             letter = a[node.st][i].c;
             new_word = current_word + letter;
 
-            if(already_formed[new_word] == 0)
-            {
+            //if(already_formed[new_word] == 0)
+            //{
                 q.push({ next_state, new_word });
-                already_formed[new_word] = 1;
-            }
+              //  already_formed[new_word] = 1;
+            //}
 
 
             if(find(qf.begin(), qf.end(), next_state) != qf.end()) //verificam daca ultima stare in care ajungem e stare finala
 
                 {
-                    //if( printed.find(new_word) == printed.end())    //verificam daca am afisat deja cuvantul format trecand prin alte stari
+                    if( printed.find(new_word) == printed.end())    //verificam daca am afisat deja cuvantul format trecand prin alte stari
                     {
-                        //printed.insert(new_word);
+                        printed.insert(new_word);
                         fout << nr + 1 << " -> " << new_word << '\n';
                         nr += 1;
                     }
