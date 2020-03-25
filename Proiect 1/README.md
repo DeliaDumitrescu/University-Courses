@@ -15,3 +15,10 @@
 ## Input Format
 
 ![](input.png)
+
+## Output Format
+
+![](output.png)
+      .
+      .
+      and so on until all the states are printed.
