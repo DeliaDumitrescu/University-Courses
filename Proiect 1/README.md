@@ -19,6 +19,4 @@
 ## Output Format
 
 ![](output.png)
-      .
-      .
-      and so on until all the states are printed.
+.. and so on until all the states are printed.
