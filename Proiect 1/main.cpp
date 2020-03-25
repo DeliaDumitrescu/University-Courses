@@ -1,13 +1,12 @@
 #include <bits/stdc++.h>
-//Still in progress
+
 using namespace std;
 
 ifstream fin("date.in");
 ofstream fout("date.out");
 
-int n, m, q0, t, words_to_test, to_generate;
+int n, m, q0, f, words_to_test, to_generate;
 bool accepted;
-
 char c, cuv[101], s[101];
 
 struct elem
@@ -29,7 +28,7 @@ vector <int> qf;          // vector in care retinem starile finale
 vector <elem> a[101];    // in a[i] avem perechi de forma < stare adiacenta cu i, caracter muchie >
 queue <elem2> q;         // in q perechi de forma < stare, secventa_litere_formata_pana_in_starea_respectiva >
 unordered_set <string> printed;
-
+unordered_map <string, bool> already_formed;
 
 ///DFA
 
@@ -57,11 +56,10 @@ int automata(char word[])
         }
 
         if(found == 0)
-        return 0;
+            return 0;
 
-         if(index_in_word == strlen(word) - 1)            //verificam daca ultima stare in care ajungem e stare finala
-            for(j = 0; j < t; j ++)
-                if(state == qf[j])
+         if(index_in_word == strlen(word) - 1)
+            if(find(qf.begin(), qf.end(), state) != qf.end()) //verificam daca ultima stare in care ajungem e stare finala
                     isfinal = 1;
     }
     return isfinal;
@@ -87,9 +85,8 @@ void dfs(char word[], int index_in_word, int state, bool &accepted)
 
             if(index_in_word == strlen(word) - 1)
             {
-                for(j = 0; j < t; j ++)          //verificam daca ultima stare in care ajungem e stare finala
-                    if(next_state == qf[j])
-                        accepted = 1;
+                if(find(qf.begin(), qf.end(), next_state) != qf.end()) //verificam daca ultima stare in care ajungem e stare finala
+                    accepted = 1;
             }
             else
 
@@ -124,15 +121,19 @@ void bfs(int to_generate)
             letter = a[node.st][i].c;
             new_word = current_word + letter;
 
-            q.push({ next_state, new_word });
+            if(already_formed[new_word] == 0)
+            {
+                q.push({ next_state, new_word });
+                already_formed[new_word] = 1;
+            }
 
-            for(j = 0; j < t; j ++)          //verificam daca ultima stare in care ajungem e stare finala
-                if(next_state == qf[j])
+
+            if(find(qf.begin(), qf.end(), next_state) != qf.end()) //verificam daca ultima stare in care ajungem e stare finala
+
                 {
-
-                    if( printed.find(new_word) == printed.end())    //verificam daca am afisat deja cuvantul format trecand prin alte stari
+                    //if( printed.find(new_word) == printed.end())    //verificam daca am afisat deja cuvantul format trecand prin alte stari
                     {
-                        printed.insert(new_word);
+                        //printed.insert(new_word);
                         fout << nr + 1 << " -> " << new_word << '\n';
                         nr += 1;
                     }
@@ -159,9 +160,9 @@ int main()
 
     fin >> q0;      // stare initiala
 
-    fin >> t;                // numar stari finale
+    fin >> f;                // numar stari finale
 
-    for(i = 0; i < t; i++)   // stari finale
+    for(i = 0; i < f; i++)   // stari finale
     {
         fin >> x;
         qf.push_back(x);
@@ -200,6 +201,8 @@ int main()
 
     fout << '\n' << "Primele " << to_generate << " de stari generate sunt: \n";
     bfs(to_generate);
+
+
 
     return 0;
 }
