@@ -1,4 +1,5 @@
 baab -> Cuvantul poate fi procesat de NFA.
+dd -> Cuvantul nu poate fi procesat de NFA.
 aaab -> Cuvantul poate fi procesat de NFA.
 aaabbbb -> Cuvantul nu poate fi procesat de NFA.
 ab -> Cuvantul poate fi procesat de NFA.
