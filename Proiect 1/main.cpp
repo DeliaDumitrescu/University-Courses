@@ -61,10 +61,6 @@ int automata(char word[])
     return isfinal;
 }
 
-
-
-
-
 /// NFA
 
 void dfs(char word[], int index_in_word, int state, bool &accepted)
