@@ -1,8 +1,7 @@
 #include <bits/stdc++.h>
-using namespace std;
 
-ifstream fin("date.in");
-ofstream fout("date.out");
+std::ifstream fin("date.in");
+std::ofstream fout("date.out");
 
 int n, m, q0, f, words_to_test, to_generate;
 bool accepted;
@@ -17,13 +16,13 @@ struct elem
 struct elem2
 {
     int st;
-    string seq;
+    std::string seq;
 };
 
-vector <int> qf;          // vector in care retinem starile finale
-vector <elem> a[101];    // in a[i] avem perechi de forma < stare adiacenta cu i, caracter muchie >
-queue <elem2> q;         // in q perechi de forma < stare, secventa_litere_formata_pana_in_starea_respectiva >
-map < pair <int, string>, bool > already_formed; //perechi de forma {nod_cu_care_am_ajuns, secventa_litere} = 1 daca am format deja aceeasi secventa de litere folosind acelasi nod la ultimul pas sau 0 altfel
+std::vector <int> qf;          // vector in care retinem starile finale
+std::vector <elem> a[101];    // in a[i] avem perechi de forma < stare adiacenta cu i, caracter muchie >
+std::queue <elem2> q;         // in q perechi de forma < stare, secventa_litere_formata_pana_in_starea_respectiva >
+std::map < std::pair <int, std::string>, bool > already_formed; //perechi de forma {nod_cu_care_am_ajuns, secventa_litere} = 1 daca am format deja aceeasi secventa de litere folosind acelasi nod la ultimul pas sau 0 altfel
 
 ///DFA
 
@@ -60,6 +59,10 @@ int automata(char word[])
     return isfinal;
 }
 
+
+
+
+
 /// NFA
 
 void dfs(char word[], int index_in_word, int state, bool &accepted)
@@ -95,7 +98,7 @@ void bfs(int to_generate)
     int i, j, nr = 0, next_state;
     char letter;
     elem2 node;
-    string current_word, new_word;
+    std::string current_word, new_word;
 
     q.push({q0,""});
 
