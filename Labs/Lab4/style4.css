@@ -1,0 +1,321 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+}
+
+body {
+    background: url('https://raw.githubusercontent.com/WebToLearn/personal-page-css-workshop/master/img/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5em;
+    margin: 0 0 1.5em 0;
+}
+
+.page-grid {
+
+    display: grid;
+    grid-template-columns: 1fr 990px 1fr;
+    grid-template-rows: fit-content fit-content;
+    grid-template-areas:
+        ". about-content ."
+        ". footer .";
+}
+
+.about-content {
+    grid-area: about-content;
+    background: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    grid-template-rows: 1fr fit-content;
+    grid-template-areas:
+        "my-avatar my-info my-list"
+        "my-social my-social my-social";
+    padding: 30px 20px;
+    border: 1px solid #f1f1f1;
+    box-shadow: 0px 6px #c0392b;
+    border-radius: 0px 0px 4px 4px;
+
+}
+
+.my-avatar {
+    grid-area: my-avatar;
+    justify-self: center;
+    align-self: center;
+}
+
+.my-info {
+    grid-area: my-info;
+    margin-left:-90px;
+}
+
+.my-info-title {
+    margin-top: 2px;
+    font-size: 38px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.my-info-subtitle {
+    color: #999;
+    font-size: 1.5em;
+    line-height: 1em;
+    margin: -0.5em 0 1em 0;
+}
+
+.my-info-content {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-bottom: 0;
+
+}
+
+
+
+.my-list {
+    grid-area: my-list;
+    margin: 0 0 0 20px;
+    padding-left: 20px;
+    list-style-type: none;
+    border-left: 1px solid #f1f1f1;
+    align-self: center;
+}
+
+.my-list-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f1f1;
+    color:#E74C3C
+}
+
+.my-list-link {
+    color: #c0392b;
+    text-decoration: none;
+}
+
+.my-social {
+    grid-area: my-social;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.my-social-item {
+    display: grid;
+    grid-template-columns: 45px 1fr ;
+    grid-template-rows: 45px fit-content;
+    grid-template-areas:
+        "my-icon my-icon-title"
+        "my-icon my-icon-subtitle";
+    padding: 6px 6px 6px 10px;
+    border: 1px solid #f1f1f1;
+    border-radius: 4px;
+    align-self:stretch;
+}
+
+.my-icon {
+    grid-area: my-icon;
+    font-size: 40px;
+    align-self: center;
+    justify-self: left;
+    margin-left:10px;
+
+
+}
+
+.my-icon-title {
+    grid-area: my-icon-title;
+    text-decoration: none;
+    color: #E74C3C;
+    font-weight: 700;
+    margin-top :10px;
+    padding:0px;
+    margin-left:15px;
+    margin-top:27px;
+
+
+
+}
+.my-icon-subtitle {
+    grid-area: my-icon-subtitle;
+    margin-left:15px;
+    margin-top:20px;
+    color:grey;
+    font-size:15px;
+}
+.redText{
+    color: #E74C3C;
+}
+
+
+.container {
+    grid-area: container;
+    background: white;
+    padding: 30px 20px;
+    border: 1px solid #f1f1f1;
+    box-shadow: 0px 6px #c0392b;
+    border-radius: 0px 0px 4px 4px;
+}
+
+.footer {
+    grid-area: footer;
+    margin-top: 30px;
+    background: white;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0px 4px #ccc;
+    border-radius: 4px;
+}
+
+.my-social {
+    grid-area: my-social;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.my-social-item {
+    display: grid;
+    grid-template-columns: 45px 1fr ;
+    grid-template-rows: 25px ;
+    grid-template-areas:
+        "my-icon my-icon-title"
+        "my-icon my-icon-subtitle";
+    padding:0px;
+    margin:0px;
+
+}
+
+.my-icon {
+    grid-area: my-icon;
+}
+
+
+
+
+.copyright {
+    margin: 0;
+}
+
+.menu {
+    width: 990px;
+    margin: 80px auto 0 auto;
+    text-align: center;
+}
+
+.menu--light {
+    margin: 30px auto 0 auto;
+}
+
+.menu-item {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 20px;
+    padding: 10px 40px 10px 40px;
+    background: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    outline: none;
+    color: #888;
+    vertical-align: bottom;
+}
+.menu-item-active {
+    position: relative;
+    bottom: -1px;
+    color: #c0392b;
+    padding: 15px 40px 15px 40px;
+    margin-top: 0;
+}
+
+.title {
+    margin: 0;
+    font-size: 38px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.subtitle {
+    color: #999;
+    font-size: 1.5em;
+    line-height: 1em;
+    margin: 0 0 1em 0;
+    text-align: center;
+}
+
+.header {
+    margin-top: 30px;
+}
+
+.my-avatar{
+    margin-left:-80px;
+    margin-bottom:20px;
+    padding:0px;
+}
+
+
+hr {
+    margin: 25px 0;
+    border: 1px solid #f1f1f1;
+}
+
+@media (max-width: 990px) {
+    .my-list {
+        display: none;
+    }
+    .page-grid {
+        display: block;
+    }
+    .about-content {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr fit-content;
+        grid-template-areas:
+            "my-avatar my-info"
+            "my-social my-social";
+        border-radius: 0;
+    }
+    .footer {
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background: none;
+    }
+    .about-content {
+        display: block;
+    }
+    .my-avatar {
+        display: block;
+        margin: 0 auto;
+    }
+    .my-info-title {
+        margin-top: 15px;
+        text-align: center;
+    }
+    .my-info-subtitle {
+        text-align: center;
+    }
+    .my-social {
+        display: block;
+    }
+    .my-social-item {
+        margin-top:10px;
+    }
+    .footer {
+        margin-top: 3px;
+    }
+}
