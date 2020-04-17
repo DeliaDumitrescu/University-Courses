@@ -2,8 +2,13 @@
   "dogs": [
     {
       "id": 1,
-      "name": "I changed my name! I'm PUFFY now!",
+      "name": "AFFENPINSCHER",
       "img": "https://images.dog.ceo/breeds/affenpinscher/n02110627_8099.jpg"
+    },
+    {
+      "id": 2,
+      "name": "AKITA",
+      "img": "https://images.dog.ceo//breeds//akita//An_Akita_Inu_resting.jpg"
     },
     {
       "id": 3,
@@ -19,11 +24,6 @@
       "id": 5,
       "name": "HOUND",
       "img": "https://images.dog.ceo/breeds/hound-afghan/n02088094_2626.jpg"
-    },
-    {
-      "name": "Buzz",
-      "img": "https://www.animalzoo.ro/wp-content/uploads/2017/05/cu11.jpg",
-      "id": 6
     }
   ]
 }

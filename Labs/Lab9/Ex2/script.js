@@ -1,4 +1,6 @@
 var tryy = 0;
+var ind = 0;
+
 
 fetch('http://localhost:3000/dogs')
   .then((response) => {      //respone->promise type
@@ -18,17 +20,18 @@ fetch('http://localhost:3000/dogs')
         ul.appendChild(listElement);
         listElement.appendChild(document.createTextNode(name));
         listElement.appendChild(document.createElement("div"));
+
         var img = document.createElement("img");
         img.src = imgurl;
         listElement.appendChild(img);
         document.body.appendChild(ul);
+
 
     }
     })
     .catch((error) => {
         console.log("Ey!");
     });
-
 
 
  function deleteData(item, url) {
@@ -38,13 +41,13 @@ fetch('http://localhost:3000/dogs')
   .then(response => response.json());
 }
 
-function updateData(item, url){
+function updateData(item, url, newNamee){
     return fetch(url + '/' + item, {
         method: 'PATCH',
         headers: {
         'Content-Type': 'application/json'},
          body: JSON.stringify({
-            "name": "I changed my name! I'm PUFFY now!",
+            "name": newNamee,
             "img": item.img
         })
     })
@@ -73,13 +76,14 @@ const dataa = {
     "img": "https://images.theconversation.com/files/319375/original/file-20200309-118956-1cqvm6j.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
  };
 
-///insertData(dataa, 'http://localhost:3000/dogs')
 
-updateData(1, 'http://localhost:3000/dogs');
-deleteData(2, 'http://localhost:3000/dogs');
+//updateData(1, 'http://localhost:3000/dogs');
+//deleteData(7, 'http://localhost:3000/dogs');
+//deleteData(8, 'http://localhost:3000/dogs');
 
 
-document.getElementById("button").addEventListener("click", function(){
+
+document.getElementById("create-button").addEventListener("click", function(){
     var name = document.getElementById("name").value;
     var img = document.getElementById("img").value;
     var to_insert = {
@@ -87,4 +91,15 @@ document.getElementById("button").addEventListener("click", function(){
         "img": img
     }
     insertData(to_insert, 'http://localhost:3000/dogs');
+});
+
+document.getElementById("delete-button").addEventListener("click", function(){
+    var toDelete = document.getElementById("to-delete").value;
+    deleteData(toDelete, 'http://localhost:3000/dogs' );
+});
+
+document.getElementById("edit-button").addEventListener("click", function(){
+    var toEdit = document.getElementById("to-edit").value;
+    var newName = document.getElementById("new-name").value;
+    updateData(toEdit, 'http://localhost:3000/dogs', newName);
 });
