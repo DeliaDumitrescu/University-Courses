@@ -14,7 +14,7 @@ h.insert(1);
 ```
   - [x] **Find min** value in heap
   ```cpp
-h.findMin();
+std::cout << h.findMin();
 ```
   - [x] **Extract(delete) min** value in heap
   ```cpp
