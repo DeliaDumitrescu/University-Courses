@@ -12,7 +12,7 @@
   - [x] **Consolidate** heap (including link operation) 
   - [x] **Delete** node by value (lazy delete)
 
-## Input format
+## Input format (date.in)
 10      => number of operations <br>
 **1** 5   => operation 1 ~ insert node 5 <br>
 1 3 <br>
@@ -25,11 +25,11 @@
 1 0 <br>
 3 <br>
 
-###### Merge example: Merging heap h (resulted from above input) with roots 0 3 with heap h2 with roots 9 22 10
-![](mergeExample.png)
-
-## Output format
+## Output format (date.out)
 2    (find min result) <br>
 3    (find min result) <br>
 0    (find min result) <br>
 0 3  (roots of heap after completing all operations)
+
+###### Merge example: Merging heap h (resulted from above input) with roots 0 3 with heap h2 with roots 9 22 10
+![](mergeExample.png)
