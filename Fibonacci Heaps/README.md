@@ -5,12 +5,33 @@
 ## Operations
 
   - [x] **Build** empty heap
+```cpp
+FibonacciHeap h;
+```
   - [x] **Insert** value in heap
+```cpp
+h.insert(1);
+```
   - [x] **Find min** value in heap
+  ```cpp
+h.findMin();
+```
   - [x] **Extract(delete) min** value in heap
+  ```cpp
+h.extractMin();
+```
   - [x] **Merge** 2 heaps
+  ```cpp
+h.merge(h2);
+```
   - [x] **Consolidate** heap (including link operation) 
+  ```cpp
+consolidate();
+```
   - [x] **Delete** node by value (lazy delete)
+  ```cpp
+h.deleteNode(1);
+```
 
 ## Input format (date.in)
 10      => number of operations <br>
@@ -33,3 +54,4 @@
 
 ###### Merge example: Merging heap h (resulted from above input) with roots 0 3 with heap h2 with roots 9 22 10
 ![](mergeExample.png)
+
