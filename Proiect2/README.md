@@ -21,8 +21,8 @@ DFA dfa;
 dfa.minimize();
 ```
 ## Input format 
-- Same as Project 1; Lambda-transitions are represented using **#**
-![](input.png)
+- Same as Project 1; Lambda-transitions are represented using **#** <br>
+![](input1.png)
 
 ## Output format
 ![](output.png)
