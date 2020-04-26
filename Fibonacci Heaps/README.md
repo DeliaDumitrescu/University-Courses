@@ -25,5 +25,5 @@
 1 0 <br>
 3 <br>
 
-###### Merge example: Mergin heap h with roots 0 3 with heap h2 with roots 9 22 10
+###### Merge example: Merging heap h with roots 0 3 with heap h2 with roots 9 22 10
 ![](mergeExample.png)
