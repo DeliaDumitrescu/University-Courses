@@ -25,3 +25,5 @@
 1 0 <br>
 3 <br>
 
+###### Merge example
+![](mergeExample.png)
