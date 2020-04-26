@@ -18,7 +18,8 @@ public:
     int  nrNodes;
     std::map< int, node* > nodes; // map in care retinem pointer catre noduri si valoarea lor pt a le putea sterge fara sa cautam valoarea de fiecare data prin toata structura. multa memorie :(.
 public:
-    FibonacciHeap(); // = operatia de build empty heap
+
+    FibonacciHeap(); // = op build empty heap
     friend std::ostream& operator << (std::ostream&, const FibonacciHeap&);
     node* createNode(int);
     void insert(int);

@@ -7,7 +7,7 @@ std::ofstream fout("date.out");
 int main()
 {
     int n, i, x, y;
-    FibonacciHeap h;
+    FibonacciHeap h, h2;
     fin >> n;
     for(i = 0; i < n; i++)
     {
@@ -27,6 +27,19 @@ int main()
         if(x == 4)
             h.extractMin();
     }
+
+    fout << h;
+
+    /*std::cout << h;
+    h2.insert(9);
+    h2.insert(22);
+    h2.insert(10);
+    h.merge(h2);
+    std::cout << h; */
+
+
+
+
 
     return 0;
 }
