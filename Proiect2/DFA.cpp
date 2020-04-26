@@ -10,7 +10,7 @@ DFA::DFA(NFA& nfa)
     transitions.resize(nfa.n, std::map<char, std::set<int>>());
 
     n = 0;
-    q0 = nfa.q0;     //daca s mai multe le facem pe toate?
+    q0 = nfa.q0;
 
     std::set<int> toInsert;
     std::set<int> current;
