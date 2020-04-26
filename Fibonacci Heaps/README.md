@@ -27,3 +27,9 @@
 
 ###### Merge example: Merging heap h (resulted from above input) with roots 0 3 with heap h2 with roots 9 22 10
 ![](mergeExample.png)
+
+## Output format
+2    (find min result) <br>
+3    (find min result) <br>
+0    (find min result) <br>
+0 3  (roots of heap after completing all operations)
