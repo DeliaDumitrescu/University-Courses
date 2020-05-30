@@ -1,264 +1,247 @@
 #include <bits/stdc++.h>
 using namespace std;
+/// PRODUSE PERISABILE ETC
+///Partea cu AN LUNA etc
 
-class RW { // read/write
-public:
-    virtual void citire(istream &in) = 0;
-    virtual void afisare(ostream &out) = 0;
-
-    friend istream &operator >> (istream &in, RW &r)
-    {
-        r.citire(in);
-        return in;
-    }
-    friend ostream &operator << (ostream &out, RW &w)
-    {
-        w.afisare(out);
-        return out;
-    }
-    virtual ~RW() {}
-};
-
-/////////////
-
-class Zbor: public RW
+class Produs
 {
 protected:
-    int id, durata, zi, luna, an;
-    string oras, destinatie;
+    string nume;
 public:
-    Zbor(int _id = 0, int _durata = 0, int _zi = 0, int _luna = 0, int _an = 0, string _oras = "", string _destinatie = ""):
-        id(_id), durata(_durata), zi(_zi), luna(_luna), an(_an), oras(_oras), destinatie(_destinatie){}
-    void citire(istream&) override;
-    void afisare(ostream&) override;
-    inline int getZi() const {return zi;}
-    inline int getLuna() const {return luna;}
-    inline int getAn() const {return an;}
-    string getType() {return "zbor";}
-    virtual ~Zbor(){}
+    Produs(string _n = ""):nume(_n){}
+    virtual void citire(istream& in);
+    virtual void afisare(ostream& out) const;
+    friend istream& operator >> (istream& in, Produs& p);
+    friend ostream& operator << (ostream& out, const Produs& p);
+    inline string getNume() const {return nume;}
+    virtual ~Produs(){}
 };
 
-void Zbor::citire(istream& in)
+void Produs::citire(istream& in)
 {
-    cout << "Introduceti urmatoarele date: \n";
-    cout << "Id: ";
-    in >> id;
-    cout << "Durata: ";
-    in >> durata;
-    cout << "Data plecarii (zi/luna/an): ";
-    in >> zi >> luna >> an;
-    cout << "Oras plecare: ";
-    in >> oras;
-    cout << "Destinatie: ";
-    in >> destinatie;
+    cout << "Nume produs: ";
+    in >> nume;
 }
 
-void Zbor::afisare(ostream& out)
+istream& operator >> (istream& in, Produs& p)
 {
-    out << "Date zbor: \n";
-    out << "Id: " << id << '\n';
-    out << "Durata: " << durata << '\n';
-    out << "Data plecarii (zi/luna/an): " << zi << " " << luna << " " << an << '\n';
-    out << "Oras plecare: " << oras << '\n';
-    out << "Destinatie: " << destinatie << '\n';
+    p.citire(in);
+    return in;
 }
 
-/////////////
+void Produs::afisare(ostream& out) const
+{
+    out << "Nume produs: " << nume << '\n';
+}
 
-class ZborTemporar: virtual public Zbor
+ostream& operator << (ostream& out, const Produs& p)
+{
+    p.afisare(out);
+    return out;
+}
+
+//////////////////
+
+class Perisabil: virtual public Produs
 {
 protected:
-    int perioadaActiva;
+    int valabilitate;
 public:
-    ZborTemporar(int _id = 0, int _durata = 0, int _zi = 0, int _luna = 0, int _an = 0, string _oras = "", string _destinatie = "", int _perioadaActiva = 0):
-        Zbor(_id, _durata, _zi, _luna, _an, _oras, _destinatie), perioadaActiva(_perioadaActiva){}
-    void citire(istream&) override;
-    void afisare(ostream&) override;
-    string getType() {return "zborTemporar";}
-    virtual ~ZborTemporar(){}
+    Perisabil(string _n = "", int _v = 0): Produs(_n), valabilitate(_v){}
+    void citire(istream& in);
+    void afisare(ostream& out) const;
+    friend istream& operator >> (istream& in, Perisabil& p);
+    friend ostream& operator << (ostream& out, const Perisabil& p);
+    inline int getValabilitate()const{return valabilitate;}
+    virtual ~Perisabil(){}
+
 };
 
-void ZborTemporar::citire(istream& in)
+void Perisabil::citire(istream& in)
 {
-    Zbor::citire(in);
-    cout << "Perioada activa: ";
-    in >> perioadaActiva;
+    Produs::citire(in);
+    cout << "Valabilitate: ";
+    in >> valabilitate;
 }
 
-void ZborTemporar::afisare(ostream& out)
+istream& operator >> (istream& in, Perisabil& p)
 {
-    Zbor::afisare(out);
-    out << "Perioada activa: " << perioadaActiva << '\n';
+    p.citire(in);
+    return in;
 }
 
-/////////////
+void Perisabil::afisare(ostream& out) const
+{
+    Produs::afisare(out);
+    out << "Valabilitate: " << valabilitate << '\n';
 
-class ZborPromotie: virtual public Zbor
+}
+
+ostream& operator << (ostream& out, const Perisabil& p)
+{
+    p.afisare(out);
+    return out;
+}
+
+//////////////////
+
+
+class Promotie: virtual public Produs
 {
 protected:
-    int discount; //20 (%)
+    int discount;
 public:
-    ZborPromotie(int _id = 0, int _durata = 0, int _zi = 0, int _luna = 0, int _an = 0, string _oras = "", string _destinatie = "", int _discount = 0):
-        Zbor(_id, _durata, _zi, _luna, _an, _oras, _destinatie), discount(_discount){}
-    void citire(istream&) override;
-    void afisare(ostream&) override;
-    string getType() {return "zborPromotie";}
-    virtual ~ZborPromotie(){}
-
+    Promotie(string _n = "", int _d = 0): Produs(_n), discount(_d){}
+    void citire(istream& in);
+    void afisare(ostream& out) const;
+    friend istream& operator >> (istream& in, Promotie& p);
+    friend ostream& operator << (ostream& out, const Promotie& p);
+    virtual ~Promotie(){}
 };
 
-void ZborPromotie::citire(istream& in)
+void Promotie::citire(istream& in)
 {
-    Zbor::citire(in);
+    Produs::citire(in);
     cout << "Discount: ";
     in >> discount;
 }
 
-void ZborPromotie::afisare(ostream& out)
+istream& operator >> (istream& in, Promotie& p)
 {
-    Zbor::afisare(out);
-    out << "Discount: " << discount << '\n';
+    p.citire(in);
+    return in;
 }
 
-/////////////
+void Promotie::afisare(ostream& out) const
+{
+    Produs::afisare(out);
+    out << "Discount: " << discount << '\n';
 
-class ZborTemporarPromotie: public ZborTemporar, public ZborPromotie
+}
+
+ostream& operator << (ostream& out, const Promotie& p)
+{
+    p.afisare(out);
+    return out;
+}
+
+//////////////
+
+class PerisabilPromotie: public Promotie, public Perisabil
 {
 public:
-    ZborTemporarPromotie(int _id = 0, int _durata = 0, int _zi = 0, int _luna = 0, int _an = 0, string _oras = "", string _destinatie = "", int _perioadaActiva = 0, int _discount = 0):
-        ZborTemporar(_id, _durata, _zi, _luna, _an, _oras, _destinatie, _perioadaActiva),
-        ZborPromotie(_id, _durata, _zi, _luna, _an, _oras, _destinatie, _discount){}
-    void citire(istream&) override;
-    void afisare(ostream&) override;
-    string getType() {return "zborTemporarPromotie";}
-    virtual ~ZborTemporarPromotie(){}
+    PerisabilPromotie(string _n = "", int _v = 0, int _d = 0): Perisabil(_n, _v), Promotie(_n, _d) {}
+    void citire(istream& in);
+    void afisare(ostream& out) const;
+    friend istream& operator >> (istream& in, PerisabilPromotie& p);
+    friend ostream& operator << (ostream& out, const PerisabilPromotie& p);
+    virtual ~PerisabilPromotie(){}
 };
 
-void ZborTemporarPromotie::citire(istream& in)
+void PerisabilPromotie::citire(istream& in)
 {
-    ZborTemporar::citire(in);
+    Perisabil::citire(in);
     cout << "Discount: ";
     in >> discount;
 }
 
-void ZborTemporarPromotie::afisare(ostream& out)
+istream& operator >> (istream& in, PerisabilPromotie& p)
 {
-    ZborTemporar::afisare(out);
-    out << "Discount: " << discount << '\n';
+    p.citire(in);
+    return in;
 }
 
-/////////////
+void PerisabilPromotie::afisare(ostream& out) const
+{
+    Perisabil::afisare(out);
+    out << "Discount: " << discount << '\n';
 
-class Rute: public RW
+}
+
+ostream& operator << (ostream& out, const PerisabilPromotie& p)
+{
+    p.afisare(out);
+    return out;
+}
+
+/////////////////////////
+
+class Lot
 {
 private:
-    string plecare, destinatie; //segm zbor
-    int nrCurse, pretEconomic;
-    vector <Zbor*> zboruri;
+    string unitate;
+    int cantitate, pretUnitate, zi, luna, an;
+    Produs* produs;
 public:
-    Rute(string _plecare = "", string _destinatie = "", int _nrCurse = 0, int _pretEconomic = 0):
-        plecare(_plecare), destinatie(_destinatie), nrCurse(_nrCurse), pretEconomic(_pretEconomic){}
-    void adaugaZbor();
-    void citire(istream&) override;
-    void afisare(ostream&) override;
-    void freeZboruri();
-    void afiseazaZborData();
-    inline string getPlecare() const {return plecare;}
-    inline string getDestinatie() const {return destinatie;}
-    bool neverDiscount();
-    //Rute(const Rute&); //daca avem timp se iau de la Marian
-    //Rute& operator = (const Rute&);
-    virtual ~Rute();
+    Lot(string _u = "", int _c = 0, int _pu = 0, int _z = 0, int _l = 0, int _a = 0): unitate(_u), cantitate(_c), pretUnitate(_pu), zi(_z), luna(_l), an(_a){}
+    void citire(istream& in);
+    void afisare(ostream& out) const;
+    friend istream& operator >> (istream& in, Lot& l);
+    friend ostream& operator << (ostream& out, const Lot& l);
+    inline int getAn() const {return an;}
+    inline int getLuna() const {return luna;}
+    inline int getZi() const {return zi;}
+    inline int getCantitate() const {return cantitate;}
+    inline int getPret(){return pretUnitate*cantitate;}
+    inline Produs* getProdus() const {return produs;} //nu scriem inline
+    void scadeCantitate(int _cantitate){cantitate -= _cantitate;}
+    //~Lot(){delete produs;}
 };
 
-void Rute::citire(istream& in)
+void Lot::citire(istream& in)
 {
-    cout << "Introduceti date ruta: \n";
-    cout << "Plecare: ";
-    in >> plecare;
-    cout << "Destinatie: ";
-    in >> destinatie;
-    cout << "Nr curse: ";
-    in >> nrCurse;
-    cout << "Pret clasa economic: ";
-    in >> pretEconomic;
-    //cout << "Pentru a adauga zboruri, accesati opriunea 3";
+    bool per = 0, prom = 0;
+    string rasp;
+    cout << "Perisabil? (da/nu)";
+    in >> rasp;
+    if(rasp == "da")
+        per = 1;
+    cout << "Promotie? (da/nu)";
+    in >> rasp;
+    if(rasp == "da")
+        prom = 1;
+    if(per && prom)
+        produs = new PerisabilPromotie;
+    else if(per)
+        produs = new Perisabil;
+    else if(prom)
+        produs = new Promotie;
+    else
+        produs = new Produs;
+    in >> *produs;
+
+    cout << "Unitate: ";
+    in >> unitate;
+    cout << "Cantitate: ";
+    in >> cantitate;
+    cout << "Pret unitate: ";
+    in >> pretUnitate;
+    cout << "Data(zi/luna/an)";
+    in >> zi >> luna >> an;
 
 }
 
-void Rute::afisare(ostream& out)
+istream& operator >> (istream& in, Lot& l)
 {
-    out << "Date despre ruta: ";
-    out << "Plecare: " << plecare << '\n';
-    out << "Destinatie: " << destinatie << '\n';
-    out << "Numar curse: " << nrCurse << '\n';
-    out << "Pret clasa economic: " << pretEconomic << '\n';
-    out << "Zboruri: \n";
-    for(int i = 0; i < zboruri.size(); i++)
-        cout << *(zboruri[i]) << '\n';
+    l.citire(in);
+    return in;
 }
 
-void Rute::adaugaZbor()
+void Lot::afisare(ostream& out) const
 {
-    string s;
-    Zbor* z;
-    cout << "Introdu tip zbor:(zbor, zborTemporar, zborPromotie, zborTemporarPromotie)";
-    cin >> s;
-
-    if(s == "zbor")
-        z = new Zbor;
-    else if(s == "zborTemporar")
-        z = new ZborTemporar;
-    else if(s == "zborPromotie")
-        z = new ZborPromotie;
-    else if(s == "zborTemporarPromotie")
-        z = new ZborTemporarPromotie;
-
-    cin >> (*z);
-    zboruri.push_back(z);
+    out << *produs;
+    out << "Unitate: " << unitate << '\n';
+    out << "Cantitate: " << cantitate << '\n';
+    out << "Pret unitate: " << pretUnitate << '\n';
+    out << "Data: " << zi << " " << luna << " " << an << '\n';
 }
 
-void Rute::afiseazaZborData()
+ostream& operator << (ostream& out, const Lot& l)
 {
-    int zi1, luna1, an1, zi2, luna2, an2;
-    cout << "Introduceti cele 2 date: ";
-    cin >> zi1 >> luna1 >> an1 >> zi2 >> luna2 >> an2;
-    for(int i = 0; i < zboruri.size(); i++)
-    {
-        int zi = zboruri[i]->getZi();
-        int luna = zboruri[i]->getLuna();
-        int an = zboruri[i]->getAn();
-        if( (an > an1) || (an == an1 && luna > luna1) || (an == an1 && luna == luna1 && zi > zi1) )
-            if((an < an2) || (an == an2 && luna < luna2) || (an == an2 & luna == luna2 && zi < zi2))
-                cout << (*zboruri[i]) << '\n';
-    }
-
+    l.afisare(out);
+    return out;
 }
-
-void Rute::freeZboruri()
-{
-    if(zboruri.size() != 0)
-    {   for(int i = 0; i <  zboruri.size(); i++)
-            delete zboruri[i];
-        zboruri.clear();
-    }
-}
-
-bool Rute::neverDiscount()
-{
-    for(int i = 0; i < zboruri.size(); i++)
-       if(dynamic_cast<ZborPromotie*>(zboruri[i]) || dynamic_cast<ZborTemporarPromotie*>(zboruri[i]))
-            return 0;
-    return 1;
-}
-
-
-Rute::~Rute()
-{
-    freeZboruri();
-}
-
-/////////////
+////////////////
 
 class Manager
 {
@@ -267,16 +250,17 @@ private:
     Manager(){}
     Manager(const Manager&) = delete;
     Manager& operator=(const Manager&) = delete;
-    vector<Rute*> rute;
+    vector<Lot*> loturi;
+    //vector<Produs*> produse;
 public:
     static Manager* getInstance();
-    void freeRute();
+    void adaugareLot();
+    void afisareLoturi();
+    void afisareLoturiPerioada();
+    void afisareLoturiDisponibile();
+    void vindeProdus();
+    void freeLoturi();
     ~Manager();
-    void adaugaRuta();
-    void afiseazaRute();
-    void afiseazaRuteData();
-    void adaugaCursapeRuta();
-    void afiseazaRuteFaraDiscount();
 
 };
 
@@ -291,85 +275,148 @@ Manager* Manager::getInstance()
     return instance;
 }
 
-void Manager::freeRute()
+void Manager::adaugareLot()  //option1()//option3()
 {
-    if(rute.size() != 0)
-    {   for(int i = 0; i <  rute.size(); i++)
-            delete rute[i];
-        rute.clear();
+    Lot* l = new Lot;
+    cin >> (*l);
+    loturi.push_back(l);
+}
+
+void Manager::afisareLoturi()  //option2()
+{
+    for(int i = 0; i < loturi.size(); i++)
+        cout << *(loturi[i]) << '\n';
+}
+
+void Manager::afisareLoturiPerioada() //option 4
+{
+    int zi1, zi2, luna1, luna2, an1, an2;
+    cout << "Introdu prima data: (zi/luna/an):";
+    cin >> zi1 >> luna1 >> an1;
+    cout << "Introdu a doua data: (zi/luna/an):";
+    cin >> zi2 >> luna2 >> an2;
+    for(int i = 0; i < loturi.size(); i ++)
+    {
+        int an = loturi[i]->getAn();
+        int luna = loturi[i]->getLuna();
+        int zi = loturi[i]->getZi();
+
+     if(an > an1 || (an == an1 && luna > luna1) || (an == an1 && luna == luna1 && zi > zi1) ) //limita inf
+        if(an < an2 || (an == an2 && luna < luna2) || (an == an2 && luna == luna2 && zi < zi2)) //limita sup
+            cout << *(loturi[i]) << '\n';
+
+    }
+
+}
+
+void Manager::afisareLoturiDisponibile() //option 5
+{
+    int ziCur, lunaCur, anCur, val = 0;
+    cout << "Introdu data curenta(zi/luna/an): ";
+    cin >> ziCur >> lunaCur >> anCur;
+    for(int i = 0; i < loturi.size(); i++)
+    {
+        int an = loturi[i]->getAn();
+        int luna = loturi[i]->getLuna();
+        int zi = loturi[i]->getZi();
+
+        if(Perisabil* p = dynamic_cast<Perisabil*> (loturi[i]->getProdus())) //produse perisabile/ perisabile&promotie
+            val = p->getValabilitate();
+        else if(PerisabilPromotie* p2 = dynamic_cast<PerisabilPromotie*> (loturi[i]->getProdus()))
+            val = p2->getValabilitate();
+
+        if(val == 0 && loturi[i]->getCantitate() != 0) //produse simple/promotie
+            cout << *loturi[i] << '\n';
+        else
+            if(an < anCur || (an == anCur && luna < lunaCur) || (an == anCur && luna == lunaCur && zi + val < ziCur)) //nu e exp(consideram valabilitate cateva zile)
+                if(loturi[i]->getCantitate() != 0) //nevide
+                    cout << *(loturi[i]) << '\n';
     }
 }
 
-void Manager::adaugaRuta()
+void Manager::vindeProdus()
 {
-    Rute* r = new Rute;
-    //r->citire(cin);
-    cin >> (*r);
-    rute.push_back(r);
+    bool exista = 0;
+    int lot, pret = 10000, val, cantitate;
+    string nume;
+
+    cout << "Introduceti nume produs: ";
+    cin >> nume;
+    cout << "Introduceti cantitate produs: ";
+    cin >> cantitate;
+
+    for(int i = 0; i < loturi.size(); i ++)
+        if((loturi[i]->getProdus())->getNume() == nume)
+        {
+            if(loturi[i]->getCantitate() > cantitate)
+            {
+                exista = 1;
+                if(loturi[i]->getPret() < pret)
+                {
+                    pret = loturi[i]->getPret();
+                    lot = i;
+                }
+            }
+            if(Perisabil* p = dynamic_cast<Perisabil*> (loturi[i]->getProdus())) //produse perisabile/ perisabile&promotie
+                val = p->getValabilitate();
+            else if(PerisabilPromotie* p2 = dynamic_cast<PerisabilPromotie*> (loturi[i]->getProdus()))
+                val = p2->getValabilitate();
+            if(val > 0)
+            {
+                int ziCur, lunaCur, anCur, val = 0;
+                cout << "Introdu data curenta(zi/luna/an): ";
+                cin >> ziCur >> lunaCur >> anCur;
+                if (!(loturi[i]->getAn() < anCur || (loturi[i]->getAn() == anCur && loturi[i]->getLuna() < lunaCur) || (loturi[i]->getAn() == anCur && loturi[i]->getLuna() == lunaCur && loturi[i]->getZi() + val < ziCur)))
+                    lot = -1;
+            }
+        }
+    if(lot != -1)
+        loturi[lot]->scadeCantitate(cantitate); //vind doar cel mai ieftin produs
+
 }
 
-void Manager::afiseazaRute()
-{
-    for(int i = 0; i < rute.size(); i++)
-       // rute[i]->afisare(cout);
-        cout << *(rute[i]) << '\n';
-}
 
-void Manager::afiseazaRuteData()
+void Manager::freeLoturi()
 {
-    for(int i = 0; i < rute.size(); i++)
-        rute[i]->afiseazaZborData();
-}
+    if(loturi.size() != 0)
+    {   for(int i = 0; i <  loturi.size(); i++)
+            delete loturi[i];
+        loturi.clear();
+    }
 
-void Manager::adaugaCursapeRuta()
-{
-    string plecare, destinatie;
-    cout << "Introduceti plecarea si destinatia rutei: ";
-    cin >> plecare >> destinatie;
-    for(int i = 0; i < rute.size(); i++)
-        if(rute[i]->getPlecare() == plecare && rute[i]->getDestinatie() == destinatie)
-            rute[i]->adaugaZbor();
-
-}
-
-void Manager::afiseazaRuteFaraDiscount()
-{
-    for(int i = 0; i < rute.size(); i++)
-        if(rute[i]->neverDiscount())
-            cout << (*rute[i]) << '\n';
 }
 
 Manager::~Manager()
 {
-    freeRute();
+    freeLoturi();
 }
 
 int main()
 {
-    int nrcereri, cerere, i;
-    Manager *M = M->getInstance();
-    cout << "Introduceti numar cereri: ";
-    cin >> nrcereri;
-    cout << "Optiuni: \n 1. Adauga ruta noua \n 2. Afiseaza toate rutele \n 3. Adauga cursa pe o anumita ruta \n 4. Afiseaza toate cursele dintre 2 date\n 5.Afiseaza rute fara discount\n 6.Inchide\n";
-    for(i = 0; i < nrcereri; i++)
-    {
+   int nrCereri, cerere;
+   Manager *M = M->getInstance();
+   cout << "Introduceti numar cereri: ";
+   cin >> nrCereri;
+   for(int i = 0; i < nrCereri; i++)
+   {
+        cout << "Introduceti 1 pt adaugare produs si introduceti cantitate 0: \n";
+        cout << "Introduceti 2 pt afisare loturi \n";
+        cout << "Introduceti 3 pt adaugare lot  \n";
+        cout << "Introduceti 4 pt afisare loturi dintr-o perioada: \n";
+        cout << "Introduceti 5 pt a afisare loturi disponibile \n";
+        cout << "Introduceti 6 pt a cumpara un produs\n";
         cin >> cerere;
-        if(cerere == 1)
-            M->adaugaRuta();
-        else if(cerere == 2)
-            M->afiseazaRute();
-        else if(cerere == 3)
-            M->adaugaCursapeRuta();
+        if(cerere == 1 || cerere == 3)
+            M->adaugareLot();
+        else if (cerere == 2)
+            M->afisareLoturi();
         else if(cerere == 4)
-            M->afiseazaRuteData();
-        else if( cerere == 5)
-            M->afiseazaRuteFaraDiscount();
+            M->afisareLoturiPerioada();
+        else if(cerere == 5)
+            M->afisareLoturiDisponibile();
         else if(cerere == 6)
-            break;
-        else cout << "Cerere invalida.";
-        cout << "\n\nOptiuni: \n 1. Adauga ruta noua \n 2. Afiseaza toate rutele \n 3. Adauga cursa pe o anumita ruta \n 4. Afiseaza toate cursele dintre 2 date\n 5.Afiseaza rute fara discount\n 6.Inchide\n";
-
-    }
+            M->vindeProdus();
+   }
 
 
     return 0;
