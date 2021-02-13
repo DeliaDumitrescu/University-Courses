@@ -16,8 +16,8 @@
 
 
 #### Labs covering following topics:
-- [x] Lab2 and Lab3: System functions
-- [x] Lab4: Processes
-- [x] Lab5: Inter-process comunication
-- [x] Lab6: Basic Threads
-- [x] Lab7: Thread synchronization using semaphores and mutexes
+- [x] Lab2 and Lab3: _System functions_
+- [x] Lab4: _Processes_
+- [x] Lab5: _Inter-process comunication_
+- [x] Lab6: _Basic Threads_
+- [x] Lab7: _Thread synchronization using semaphores and mutexes_
