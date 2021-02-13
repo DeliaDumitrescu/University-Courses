@@ -1,4 +1,4 @@
-### Graph Theory homeworks covering different topics studied during school semester:
+### Graph Theory homeworks covering different topics studied during the school semester:
 - [x] Breadth First Search and Depth First Search 
 - [x] Connected and strongly connected components
 - [x] Hamiltonian and Eulerian Cycles
