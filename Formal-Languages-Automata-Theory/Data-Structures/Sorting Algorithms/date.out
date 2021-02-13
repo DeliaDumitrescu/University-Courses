@@ -1,0 +1,172 @@
+Pentru 100 numere mai mici ca 1000:
+
+BubbleSort
+Correct
+Execution Time: 0.0006291866302490234 seconds
+
+ShellSort
+Correct
+Execution Time: 9.250640869140625e-05 seconds
+
+MergeSort
+Correct
+Execution Time: 0.00022721290588378906 seconds
+
+QuickSort
+Correct
+Execution Time: 9.655952453613281e-05 seconds
+
+CountSort
+Correct
+Execution Time: 0.00017380714416503906 seconds
+
+RadixSort256
+Correct
+Execution Time: 0.0001819133758544922 seconds
+
+Implemented sort
+Correct
+Execution Time: 7.152557373046875e-06 seconds
+
+Pentru 100 numere mai mici ca 100000000:
+
+CountSort
+Can't sort!
+
+BubbleSort
+Correct
+Execution Time: 0.0005638599395751953 seconds
+
+ShellSort
+Correct
+Execution Time: 9.34600830078125e-05 seconds
+
+MergeSort
+Correct
+Execution Time: 0.0001976490020751953 seconds
+
+QuickSort
+Correct
+Execution Time: 9.560585021972656e-05 seconds
+
+RadixSort256
+Correct
+Execution Time: 0.0001678466796875 seconds
+
+Implemented sort
+Correct
+Execution Time: 5.9604644775390625e-06 seconds
+
+Pentru 10000 numere mai mici ca 10000:
+
+BubbleSort
+Correct
+Execution Time: 6.464436054229736 seconds
+
+ShellSort
+Correct
+Execution Time: 0.034568071365356445 seconds
+
+MergeSort
+Correct
+Execution Time: 0.034983158111572266 seconds
+
+QuickSort
+Correct
+Execution Time: 0.017352581024169922 seconds
+
+CountSort
+Correct
+Execution Time: 0.0035185813903808594 seconds
+
+RadixSort256
+Correct
+Execution Time: 0.006967306137084961 seconds
+
+Implemented sort
+Correct
+Execution Time: 0.0010216236114501953 seconds
+
+Pentru 10000 numere mai mici ca 1000000:
+
+BubbleSort
+Correct
+Execution Time: 6.934093236923218 seconds
+
+ShellSort
+Correct
+Execution Time: 0.03751039505004883 seconds
+
+MergeSort
+Correct
+Execution Time: 0.03682374954223633 seconds
+
+QuickSort
+Correct
+Execution Time: 0.01801276206970215 seconds
+
+CountSort
+Correct
+Execution Time: 0.1741037368774414 seconds
+
+RadixSort256
+Correct
+Execution Time: 0.007399559020996094 seconds
+
+Implemented sort
+Correct
+Execution Time: 0.001085042953491211 seconds
+
+Pentru 1000000 numere mai mici ca 10000:
+
+BubbleSort
+Can't sort!
+
+ShellSort
+Can't sort!
+
+MergeSort
+Correct
+Execution Time: 7.455390691757202 seconds
+
+QuickSort
+Correct
+Execution Time: 3.748258590698242 seconds
+
+CountSort
+Correct
+Execution Time: 0.21161532402038574 seconds
+
+RadixSort256
+Correct
+Execution Time: 1.95408296585083 seconds
+
+Implemented sort
+Correct
+Execution Time: 0.19695234298706055 seconds
+
+Pentru 10000000 numere mai mici ca 10000000:
+
+BubbleSort
+Can't sort!
+
+ShellSort
+Can't sort!
+
+MergeSort
+Can't sort!
+
+QuickSort
+Can't sort!
+
+CountSort
+Can't sort!
+
+RadixSort256
+Correct
+Execution Time: 23.670994997024536 seconds
+
+Implemented sort
+Correct
+Execution Time: 4.325070142745972 seconds
+
