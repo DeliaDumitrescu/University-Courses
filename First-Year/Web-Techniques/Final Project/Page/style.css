@@ -1,0 +1,654 @@
+.Body{
+    background-image: url(background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Lato', sans-serif;
+}
+
+
+.title{
+    color: black;
+    text-align: center;
+    font-size: 70px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    border-bottom: 2px solid lavenderblush;
+    border-top: 2px solid lavenderblush;
+    background-color: rgb(255, 255, 255, .7);
+    text-shadow: 1px 1px #d9d9d9;
+}
+
+.category-title{
+  text-align: center;
+  text-shadow: 1px 1px grey;
+}
+
+.quote{
+    text-align: right;
+    font-style: oblique;
+    background-color: white;
+    margin-top: 15px;
+    font-family: Free Mono, mono;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: black;
+    position: relative;
+}
+
+.box{
+  background-color: rgb(255, 255, 255, .8);
+  font-size: 22px;
+  padding: 10px 40px 30px 40px;
+  margin: 20px;
+  border: 15px solid rgb(111, 242, 242, 0.4);
+  border-radius: 5px;
+}
+
+.Task-box{
+    width: 500px;
+    margin-right: 35px;
+    margin-left: 180px;
+}
+
+.emoji{
+    text-align: center;
+    font-size: 40px;
+}
+
+.list{
+    padding-top: 15px;
+    padding-left: 0px;
+
+}
+
+.list-item{
+    padding-top:10px;
+    list-style: none;
+}
+
+.addTask{
+    padding-top: 15px;
+}
+
+.Add-button{
+  background-color: rgb(111, 242, 242, 0.4);;
+  /*border: none; */
+  color: black;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 3px;
+  width: 30px;
+  margin-bottom: 10px;
+}
+
+.Add-button:hover, .Update-button:hover, .done-button:hover, .edit-button:hover, .delete-button:hover, .Close-button:hover, .Submit-button:hover, .Personal-info-button:hover{
+  background-color: #ffb3e6;
+}
+
+.Task-input{
+    font-size: 17px;
+    border-radius: 3px;
+}
+
+.Update-button{
+  background-color: rgb(111, 242, 242, 0.4);
+ /* border: none;*/
+  color: black;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  border-radius: 3px;
+}
+
+.Edit-input{
+    font-size: 17px;
+    border-radius: 3px;
+    margin-left: 2px;
+}
+
+.done-button{
+  background-color: rgb(111, 242, 242, 0.4);
+  /*border: none;*/
+  color: black;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 3px;
+  margin-right: 20px;
+  margin-bottom: 8px;
+}
+
+
+.delete-button{
+  background-color: rgb(111, 242, 242, 0.4);
+  /*border: none;*/
+  color: black;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius:3px;
+  position: absolute;
+  left: 800px;
+}
+
+.edit-button{
+  background-color: rgb(111, 242, 242, 0.4);
+ /* border: none; */
+  color: black;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius:3px;
+  margin-right:10px;
+  margin-bottom:8px;
+  position: absolute;
+  left: 750px;
+}
+
+.Notes-box{
+    width: 500px;
+    margin-left: 35px;
+}
+
+.Notes-input{
+  margin-top: 30px;
+  margin-left: 16px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.Notes{
+  color: black;
+  max-width: 500px;
+  word-wrap: break-word;
+  font-size: 18px;
+}
+
+
+.AddNotes-button{
+  margin-left: 200px;
+  font-size: 18px;
+}
+
+.Photos-box{
+  width: 700px;
+  margin-top: 35px;
+  padding-bottom: 50px;
+}
+
+.Photos{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px 0px 0px 20px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+.Photo{
+  padding: 10px;
+}
+
+.FileSelect{
+  float: center;
+  font-size: 17px;
+  color: black;
+  margin-left: 265px;
+}
+
+.FileList{
+  padding: 0px;
+}
+
+.crossed{
+  text-decoration: line-through;
+}
+
+.modal-Box {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-image: url(background.jpeg);
+  margin: 14% 35% auto ;
+  padding: 20px;
+  border: 2px solid #888;
+  width: 30%;
+  border: 15px solid rgb(111, 242, 242);
+}
+
+.Close-button{
+  background-color: rgb(111, 242, 242, 0.4);;
+  color: black;
+  border: 1px solid grey;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  border-radius: 3px;
+  width: 30px;
+  margin-left: 520px;
+}
+
+.personal-input{
+  font-size: 22px;
+  margin-left: 120px;
+  border-radius: 3px;
+}
+
+.Submit-button{
+  background-color: rgb(111, 242, 242, 0.4);;
+  color: black;
+  border: 1px solid grey;
+  text-align: center;
+  text-decoration: none;
+  font-size: 19px;
+  border-radius: 3px;
+  width: 73px;
+  margin-left: 480px;
+  margin-top: 35px;
+}
+
+.personal-category{
+  font-family: 'Lato', sans-serif;
+  font-size: 22px;
+  background-color: white;
+  padding-left: 200px;
+  font-style: oblique;
+  background-color: rgb(255, 255, 255, .5);
+}
+
+.Personal-info-button{
+  height: 40px;
+  font-size: 15px;
+  margin-left: -210px;
+  margin-top: 10px;
+  background-color: rgb(255, 255, 255, .8);
+  border-radius: 3px;
+}
+
+.Footer{
+  color: black;
+  text-align: right;
+  font-style: oblique;
+  font-weight: bold;
+  padding: 0px;
+  border-bottom: 2px solid lavenderblush;
+  border-top: 2px solid lavenderblush;
+  margin-top: 40px;
+  background-color: rgb(255, 255, 255, .7);
+}
+
+.footer-social-icons {
+  display: block;
+}
+
+.social-icons li {
+  vertical-align: top;
+  display: inline;
+  height: 100px;
+}
+
+.fa-facebook {
+  padding:10px 14px;
+  background-color: #ff80bf;
+}
+
+.fa-facebook:hover {
+  background-color: #3d5b99;
+}
+
+.fa-linkedin {
+  padding:10px 14px;
+  background-color: #00ccff;
+}
+.fa-linkedin:hover {
+  background-color: #0073a4;
+}
+.fa-github {
+  padding:10px 14px;
+  background-color: #cc66ff;
+}
+.fa-github:hover {
+    background-color: #5a32a3;
+}
+
+.icon{
+    text-decoration: none;
+    color: #fff;
+}
+
+.personalInfo{
+  background-color: rgb(255, 255, 255, .8);
+  width: 190px;
+  height: 75px;
+  text-align: center;
+  font-weight: bold;
+  padding: 9px;
+  padding-bottom: 10px;
+  margin-left: 800px;
+  font-size: 18px;
+  border: 15px solid rgb(111, 242, 242, 0.4);
+  border-radius: 5px;
+
+}
+
+@media only screen and (max-width: 768px) {
+.title{
+  font-size: 30px;
+}
+.Personal-info-button{
+  margin-left: 280px;
+}
+
+.Task-box{
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 7px;
+}
+
+.Notes-box{
+  width: 240px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.Photos-box{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.category-title{
+  font-size: 26px;
+}
+
+.emoji{
+  font-size: 26px;
+}
+
+.box{
+  font-size: 16px;
+}
+
+.delete-button{
+  left: 300px;
+}
+
+.edit-button{
+  left: 260px;
+}
+
+.Task-input,.Edit-input{
+  font-size: 16px;
+}
+
+
+.Notes-input{
+  margin-top: 30px;
+  margin-left: 0px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  width: 230px;
+}
+
+.AddNotes-button{
+  margin-left: 100px;
+}
+
+.FileSelect{
+  margin-left: 30px;
+}
+
+.Photo{
+  padding: 0px;
+  margin-bottom: 30px;
+}
+
+.modal-content{
+  width: 50%;
+  height: 60%;
+  margin: 12% 19% auto ;
+}
+
+.personal-category{
+  font-size: 17px;
+  margin-left: 6px;
+  padding-left: 40px;
+}
+
+.personal-input{
+  margin-left: 5px;
+  font-size: 14px;
+
+}
+
+.Submit-button{
+  margin-left: 120px;
+  margin-top: 10px;
+  height: 20px;
+}
+
+.Close-button{
+  margin-left: 170px;
+}
+
+.personalInfo{
+  display: none;
+}
+
+}
+
+
+@media screen and (min-width:768px) and (max-width: 1042px){
+
+.delete-button{
+  left: 560px;
+}
+
+.edit-button{
+  left: 600px;
+}
+
+.Personal-info-button{
+  margin-left: 600px;
+}
+
+.Task-box{
+  margin-left: 100px;
+  margin-right: 80px;
+}
+
+.Notes-box{
+  width: 320px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.FileSelect{
+  margin-left: 210px;
+}
+
+.Close-button{
+  margin-left: 430px;
+}
+
+.modal-content{
+  width: 60%;
+  height: 38%;
+  margin: 10% 16% auto ;
+}
+
+.Submit-button{
+  margin-left: 400px;
+  height: 40px;
+}
+
+.personal-category{
+  padding-left: 150px;
+}
+
+.personal-input{
+  margin-left: 130px;
+}
+
+.Notes-input{
+  margin-top: 30px;
+  margin-left: 0px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  width: 300px;
+}
+.Photo{
+  padding: 10px;
+}
+
+.AddNotes-button{
+  margin-left: 120px;
+}
+.personalInfo{
+  display: none;
+}
+}
+
+
+@media screen and (min-width: 1475px) and (max-width: 1750px)
+{
+
+.delete-button{
+  left: 600px;
+}
+
+.edit-button{
+  left: 650px;
+}
+
+.personalInfo{
+  margin-left: 700px;
+}
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1474px)
+{
+
+.delete-button{
+  left: 500px;
+}
+
+.edit-button{
+  left: 550px;
+}
+
+.personalInfo{
+  display: none;
+}
+
+}
+
+
+@media screen and (min-width: 1041px) and (max-width: 1400px)
+{
+
+.delete-button{
+  left: 700px;
+}
+
+.edit-button{
+  left: 750px;
+}
+
+.personalInfo{
+  display: none;
+}
+}
+
+#time{
+  font-size: 22px;
+  text-align: center;
+  background-color:  #ffccee;
+
+}
+
+#question, #answer, .Birthday{
+  text-align: center;
+}
+
+#question-answer{
+  margin-left: 700px;
+  font-size: 17px;
+  border-radius: 3px;
+ }
+
+#answer-button, #birthday-button{
+  background-color: rgb(111, 242, 242, 0.4);;
+  /*border: none; */
+  color: black;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 3px;
+  width: 70px;
+}
+
+.modal-Box-IDLE {
+  background-image: url(background.jpeg);
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.timer-Text{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 200px;
+}
+
+#birthday{
+  margin-left: 700px;
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+#event-button{
+  background-color: rgb(111, 242, 242, 0.4);;
+  /*border: none; */
+  color: black;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 3px;
+  width: 100px;
+  margin-left: 790px;
+}

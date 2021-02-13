@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Personal Agenda📒</title>
+    <script src="https://kit.fontawesome.com/0e219e693b.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class = "Body" ondblclick = "doubleClick()" >
+
+    <header class="header">
+        <h1 class="title"> Personal Agenda</h1>
+        <div class = "quote"> Organize your life around your dreams and watch them become true. </div>
+    </header>
+
+    <main class = "container">
+
+    <button class = "Personal-info-button" id = "personal-info-button"> Personal Info </button>
+    <section  id = "Modal-Box" class = "modal-Box">
+        <div class = "modal-content" id = "modal-contentt">
+        <button id = "close-button" class = "Close-button"> × </button>
+        <p class = "personal-category"> Enter first name: </p> <input type = "text" class = "personal-input" id = "first-name"> <br>
+        <p class = "personal-category"> Enter last name: </p> <input type = "text" class = "personal-input" id = "last-name"> <br>
+        <p class = "personal-category"> Enter age: </p> <input type = "number" class = "personal-input" id = "age"> <br>
+        <p class = "personal-category"> Enter goal: </p> <input type = "text" class = "personal-input" id = "goal" > <br>
+        <button class = "Submit-button" id = "submit-button"> Submit </button>
+        </div>
+    </section>
+
+    <section class = "box Task-box" id = "task-box">
+        <h2 class = "category-title"> My To-Do List: </h2>
+        <div class = "emoji">
+         <i class="fas fa-graduation-cap"></i>
+         <i class="fas fa-user-tie"></i>
+         <i class="fas fa-child"></i>
+        </div>
+
+        <ul class="list" id = "taskList"></ul>
+        <div class = "addTask">
+            <button class = "Add-button" id = "add-button"><i class="fas fa-plus"></i> </button>
+            <input type = "text" class = "Task-input" id = "task-input" placeholder = "Insert task">
+        </div>
+
+        <div class = "editTask">
+             <button class = "Update-button" id = "update-button"><i class="fas fa-exchange-alt"></i> </button>
+             <input type = "text" class = "Edit-input" id = "edit-input" placeholder = "Insert changed task">
+        </div>
+    </section>
+
+    <section class = "box Notes-box" id = "notes-box">
+        <h2 class = "category-title"> My Thoughts: </h2>
+        <div class = "emoji">
+        <i class="fas fa-pencil-alt"></i>
+         <i class="fas fa-book-open"></i>
+         <i class="fas fa-pen-nib"></i>
+        </div>
+
+        <textarea class = "Notes-input" id = "notes-input" cols="50" rows="15"> </textarea>
+        <button class = "Add-button AddNotes-button" id = "addNotes-button"> <i class="fas fa-sticky-note"></i> </button>
+        <button class = "Update-button" id = "updateNotes-button"> <i class="fas fa-cogs"></i> </button>
+        <div> <p class = "Notes" id = "notes"> </div>
+    </section>
+
+    <section class = "box Photos-box" id = "photos-box">
+        <div class = "photo-Text">
+        <h2 class = "category-title"> My Photos: </h2>
+        <div class = "emoji">
+        <i class="fas fa-photo-video"></i>
+         <i class="fas fa-camera-retro"></i>
+         <i class="fas fa-portrait"></i>
+        </div>
+
+        <input type = "file" id = "fileElem" multiple accept="image/*" style = "display:none">
+        <a href="#" class = "FileSelect" id = "fileSelect"> Press to insert a photo! </a>
+        </div>
+        <div class = "FileList" id = "fileList">
+        <ul class = "Photos" id = "photo-list"> </ul>
+        </div>
+    </section>
+    </main>
+
+    <!--<div class = "personalInfo" id = "PersonalInfo"> Delia Dumitrescu <br> 20 <br> Be happy </div> -->
+
+    <section class = "box">
+        <h2 class = "category-title"> Question time! </h2>
+        <p id = "question"> What was the goal you first set to achieve with your personal agenda? </p>
+        <input type = "text" id = "question-answer" onclick ="startAnswerTimer()">
+        <button type = "button" id = "answer-button" > Submit </button>
+         <p id = "answer"> </p>
+    </section>
+
+    <section class = "box">
+    <h2 class = "category-title"> Age: </h2>
+    <div class = "Birthday">
+    <label for =" birthday "> Enter your birthday: </label>
+    </div>
+    <input class = "Birthday" type="date" id = "birthday" name = "birthday">
+    <button class = "Birthday" id = "birthday-button"> Submit </button>
+    <p class = "Birthday" id = "Age"> Your age: </p>
+    </section>
+
+    <section class = "box">
+    <h2 class = "category-title" id="myP"  onmousedown = "mouseDown()" onmouseup = "mouseUp()" > Events: </h2>
+    <button id = "event-button"> See events</button>
+    <div id = "events"> </div>
+    </section>
+
+    <p id = "time"> </p>
+
+    <section  id = "Modal-Box-IDLE" class = "modal-Box-IDLE">
+    <p class ="timer-Text" id = "timer-text"> You haven't been active for <span id = "seconds"></span> seconds.</p>
+    </section>
+
+    <footer class = "Footer">
+    <p> Designed by Delia Dumitrescu </p>
+    <div class="footer-social-icons">
+    <ul class="social-icons">
+        <li><a class = "icon" href="https://www.facebook.com/delia.dumitrescu.5036" target="_blank" class="social-icon"> <i class="fa fa-facebook"></i></a></li>
+        <li><a class = "icon" href="https://www.linkedin.com/in/delia-ioana-dumitrescu-680817196/" target="_blank" class="social-icon"> <i class="fa fa-linkedin"></i></a></li>
+        <li><a class = "icon" href="https://github.com/DeliaDumitrescu" target="_blank"  class="social-icon"> <i class="fa fa-github"></i></a></li>
+    </ul>
+    </div>
+    </footer>
+
+<script src="script.js"> </script>
+<script src="script2.js"> </script>
+<script src="task.js"> </script>
+
+</body>
+</html>
