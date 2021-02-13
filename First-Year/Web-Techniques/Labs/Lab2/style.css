@@ -1,0 +1,310 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+}
+
+p{
+margin-left:15px;*
+}
+
+body {
+    background: url('https://raw.githubusercontent.com/WebToLearn/personal-page-css-workshop/master/img/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
+.title {
+    text-align: center;
+    font-weight: 700;
+    font-family:Lato;
+    font-size: 38px;
+    text-transform: uppercase;
+    margin: 0px;
+
+
+}
+
+
+.subtitle{
+
+    color: #999;
+    font-family:Lato;
+    font-size:1.5em;
+    line-height:1em;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom:1em;
+    margin-bottom: 1em;
+}
+
+.menu
+{
+   text-align: center;
+   margin: 80px auto 0 auto;
+   width: 990px;
+}
+
+.menu-item{
+  display: inline-block;
+
+  margin-left:20px;
+  margin-right:10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family:Lato;
+  font-size:14px;
+  color:#999;
+  vertical-align:text-bottom;
+  padding: 10px 40px 10px 40px;
+  text-decoration: none;
+  background-color: white;
+}
+
+.menu-item-active
+{
+  position: relative;
+  bottom: -1px;
+  color:#c0392b;
+  padding: 15px 40px 15px 40px;
+  margin-top:0;
+}
+
+.resume-title
+{
+  margin-left:25px;
+  font-size:30px;
+  font-family: "Lato";
+}
+
+.resume-content{
+  /*border-right: 1px solid #f1f1f1; */
+}
+
+.resume-aside{
+  border-left: 1px solid #f1f1f1;
+
+}
+
+.resume-info
+{
+
+}
+
+
+.resume-date
+{
+  font-size:14px;
+  width:100px;
+  padding:4px;
+  text-align:center;
+  margin-left:550px;
+  margin-top:-40px;
+  background-color:darkturquoise;
+  color:white;
+  border-radius: 5px;
+
+}
+
+.resume-subtitle{
+
+  margin-left:25px;
+
+}
+
+
+.skills-item
+{
+  list-style-type: none;
+  display: inline-block;
+  width:250px;
+  margin: 5px 45px 5px -10px;
+  border: 1px solid #f1f1f1;
+  font-size:15px;
+  padding: 0px 120px 0px 0px;
+  text-align:left;
+  border-radius: 5px;
+  color:white;
+
+}
+
+.photoshop1{
+  background-color:green;
+  width:60%;
+  background-image: linear-gradient(135deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  background-size: 5rem 5rem;
+  border-radius: 5px;
+  padding:3px;
+
+}
+
+.ilustrator1{
+  background-color:orange;
+  width:100%;
+  background-image: linear-gradient(135deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  background-size: 5rem 5rem;
+  border-radius: 5px;
+  padding:3px;
+
+}
+
+.indesign1{
+  background-color:purple;
+  width:80%;
+  background-image: linear-gradient(135deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  background-size: 5rem 5rem;
+  border-radius: 5px;
+  padding:3px;
+}
+
+
+.xd1{
+   background-color:pink;
+   width:45%;
+   background-image: linear-gradient(135deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+   background-size: 5rem 5rem;
+   border-radius: 5px;
+   padding:3px;
+}
+
+
+.sketch1{
+   background-color:black;
+   width:90%;
+   background-image: linear-gradient(135deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+   background-size: 5rem 5rem;
+   border-radius: 5px;
+   padding:3px;
+}
+
+.microsoft1{
+  background-color:red;
+  width:90%;
+  background-image: linear-gradient(135deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  background-size: 5rem 5rem;
+  border-radius: 5px;
+  padding:3px;
+}
+
+.linux1{
+  background-color:grey;
+  width:150%;
+  background-image: linear-gradient(135deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  background-size: 5rem 5rem;
+  border-radius: 5px;
+  padding:3px;
+}
+
+.user1{
+  background-color:red;
+  width:90%;
+  background-image: linear-gradient(135deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  background-size: 5rem 5rem;
+  border-radius: 5px;
+  padding:3px;
+}
+
+.tip1{
+   background-color:darksalmon;
+   width:111%;
+   background-image: linear-gradient(135deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+   background-size: 5rem 5rem;
+   border-radius: 5px;
+   padding:3px;
+}
+
+
+.web1{
+   background-color:blue;
+  width:150%;
+  background-image: linear-gradient(135deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  background-size: 5rem 5rem;
+  border-radius: 5px;
+  padding:3px;
+}
+
+.html1{
+   background-color:orange;
+  width:90%;
+  background-image: linear-gradient(135deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  background-size: 5rem 5rem;
+  border-radius: 5px;
+  padding:3px;
+}
+
+.php1{
+   background-color:green;
+  width:70%;
+  background-image: linear-gradient(135deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  background-size: 5rem 5rem;
+  border-radius: 5px;
+  padding:3px;
+}
+
+.jq1{
+  background-color:black;
+  width:100%;
+  background-image: linear-gradient(135deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  background-size: 5rem 5rem;
+  border-radius: 5px;
+  padding:3px;
+}
+
+.ruby1{
+  background-color:pink;
+  width:150%;
+  background-image: linear-gradient(135deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  background-size: 5rem 5rem;
+  border-radius: 5px;
+  padding:3px;
+}
+
+.python1{
+   background-color:darksalmon;
+  width:70%;
+  background-image: linear-gradient(135deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  background-size: 5rem 5rem;
+  border-radius: 5px;
+  padding:3px;
+}
+
+aside{
+  margin-left:20px;
+}
+
+hr{
+
+    margin-top:25px;
+    margin-bottom:25px;
+    border-color:#f1f1f1;
+    border-style:solid;
+    border-width:1px;
+}
+
+
+.header {
+    margin-top: 30px;
+}
+
+.resume-container {
+  background: white;
+  width: 990px;
+  margin: 0 auto 30px auto;
+  padding: 30px 20px;
+  border: 1px solid #f1f1f1;
+  box-shadow: 0px 6px #c0392b;
+  border-radius: 0px 0px 4px 4px;
+  display: flex;
+}
+
+.menu
+{
+    text-align: center;
+     width: 990px;
+}
+

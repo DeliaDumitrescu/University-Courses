@@ -1,0 +1,9 @@
+.contact-container{
+    display:flex;
+    flex-wrap:nowrap;
+}
+
+.contact-item{
+    text-align:center;
+    padding:10px;
+}

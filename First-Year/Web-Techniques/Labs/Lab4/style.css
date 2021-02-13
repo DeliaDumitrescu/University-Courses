@@ -1,0 +1,44 @@
+html {
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+}
+
+body {
+    background: url('../../img/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
+.page-grid {
+    margin: 100px 0;
+    display: grid;
+    grid-template-columns: 1fr 990px 1fr;
+    grid-template-rows: fit-content fit-content;
+    grid-template-areas:
+        ". about-content ."
+        ". footer .";
+}
+
+.about-content {
+    grid-area: about-content;
+    background: white;
+}
+
+.footer {
+    grid-area: footer;
+    margin-top: 30px;
+    background: white;
+}
+
+.about-content {
+    ...
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    grid-template-rows: 1fr fit-content;
+    grid-template-areas:
+        "my-avatar my-info my-list"
+        "my-social my-social my-social";
+}
