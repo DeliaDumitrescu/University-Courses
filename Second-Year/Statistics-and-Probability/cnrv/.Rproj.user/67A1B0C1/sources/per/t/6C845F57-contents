@@ -1,0 +1,129 @@
+#Functia Beta
+gamma_val <- function(x, a)
+{
+  x ^ (a - 1) * exp(-x)
+}
+
+gamma <- function (x)
+{
+  if (x == round(x))
+    return(factorial((x - 1)))
+  if (x > 1)
+    return(x - 1) * gamma(x - 1)
+  if (x == 0.5)
+    return(sqrt(pi))
+  return(integrate(gamma_val, 0, Inf, a = x)$value)
+}
+
+beta_val <- function(a, x, y) 
+{
+  (a ^ (x - 1)) * ((1 - a) ^ (y - 1))
+}
+
+beta<- function (x, y) 
+{
+  integrate(beta_val, 0, 1, x = x, y = y)$value
+}
+
+beta2 <- function (x, y) 
+{
+  (gamma(x) * gamma(y)) / gamma(x + y)
+}
+
+beta(1, 0.9)
+beta2(1, 0.8)
+
+#1) 2)
+#a)
+# rezultatul este diferit cand folosim *, putem inlocui A*B cu exp(log(A) + log(B))
+
+(X1 <- RV(2:3, c(1/5, 4/5)))
+(Y1 <- RV(-3:-2, c(4/5, 1/5)))
+
+X11 <- (3*X1)
+X12 <- X1^(-1)
+Y11 <- Y1^(2)
+Y12 <- (Y1+3)
+X13 <- cos((pi/2)*X1)
+ 
+A <- 2*X1 + 3*Y1
+B <- 3*X1 - Y1
+C <- (X1^2)*(Y1^3)
+
+P(A > 1)
+P(A > 1 | X1 > 0)
+P(A < 3 | Y1 < -2)
+P(C > 3)
+P(C <= 3)
+P(A < 3*X1 - Y1)
+
+plot(X1)
+plot(Y1)
+plot(X11)
+plot(X12)
+plot(X13)
+plot(A)
+plot(B)
+plot(C)
+
+#b)
+X2<-RV(c(0,9))
+Y2<-RV(c(-3, 1), c(1/7, 6/7))
+D <- X2 - Y2
+E <- X2 * Y2
+F <- cos(pi*X23)
+G <- X2^2 + 3*Y2
+
+P(D < 0)
+P(D < 0 | X2 > 0)
+P(D> 0 | Y2 <= 0)
+P(F < 1/2)
+P(G >= 3)
+P(D < G)
+
+plot(X2)
+plot(Y2)
+plot(D)
+plot(E)
+plot(F)
+plot(G)
+
+#c)
+X3 <- RV(c(5, 8), c(1/3, 2/3))
+Y3 <- RV(c(-1, 1), c(1/6, 5/6))
+I <- X3 + Y3
+J <- X3 * Y3
+K <- sin(pi*J)
+L <- 1/X3 + 1/Y3
+
+P(I < 2)
+P(I > 2 | x3 > 5)
+P(I < 12 | Y2 < 0)
+P(K <= 1/2)
+P(L < 1 | Y2 < 0)
+P(L < I)
+
+plot(X3)
+plot(Y3)
+plot(I)
+plot(J)
+plot(K)
+plot(L)
+
+#d)
+X4 <- RV(c(-3, 6), c(1/8, 7/8))
+Y4 <- RV(c(exp(1), exp(3)), c(1/4, 3/4))
+M <- X4*Y4
+N <- X4 * (1/Y4)
+O <- X4 - Y4^2
+
+P(M < exp(4))
+P(M >= 7 | X4 < 0)
+P(M < 9 | Y4 > 3)
+P(X4/Y4 < 1)
+
+plot(X4)
+plot(Y4)
+plot(M)
+plot(N)
+plot(O)
