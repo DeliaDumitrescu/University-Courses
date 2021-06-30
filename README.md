@@ -1,7 +1,7 @@
 ### Homeworks and projects completed during college
 
 ### Relevant projects:
-  
+* [_CT Scan Classification_](https://github.com/DeliaDumitrescu/CT-Scan-Classification)
 * [_C++ SFML Flappy Bird Game_](https://github.com/DeliaDumitrescu/Flappy-Bird-Game)
 * [_Operating Systems Thread Pool Implementation_](https://github.com/DeliaDumitrescu/University-Courses/tree/master/Second-Year/Operating-Systems)
 * [_ASP.NET MVC 5 Web Application_](https://github.com/DeliaDumitrescu/Task-Manager)
